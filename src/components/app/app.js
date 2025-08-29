@@ -5,19 +5,23 @@ import EmployeesList from '../employees-list/employees-list';
 import EmployeesAddForm from '../employees-add-form/employees-add-form';
 
 import './app.css';
+import { useState } from 'react';
 
 function App() {
+  const [search, setSearch] = useState("");
   return (
     <div className="app">
         <AppInfo />
 
         <div className="search-panel">
-            <SearchPanel/>
+            <SearchPanel 
+            search={search}
+            setSearch={setSearch}/>
             <AppFilter/>
         </div>
         
-        <EmployeesList/>
-        <EmployeesAddForm/>
+        <EmployeesList 
+        search={search}/>
     </div>
   );
 }

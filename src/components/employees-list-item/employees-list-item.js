@@ -1,15 +1,19 @@
 import './employees-list-item.css';
 import { useState } from 'react';
 
-const EmployeesListItem = ({ id, name, salary, onDelete }) => {
+const EmployeesListItem = ({ id, name, salary, onDelete, increase }) => {
     const [color, setColor] = useState("black");
 
     const toggleColor = () => {
         setColor(prevColor => prevColor === "black" ? "orange" : "black");
     };
+    let className = 'list-group-item d-flex justify-content-between';
+    if (increase){
+        className += ' increase';
+    }
 
     return (
-        <li className="list-group-item d-flex justify-content-between">
+        <li className={className}>
             <span className="list-group-item-label" style={{ color: color }}>
                 {name}
             </span>

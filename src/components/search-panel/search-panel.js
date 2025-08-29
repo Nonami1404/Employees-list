@@ -1,10 +1,12 @@
 import './search-panel.css';
+import EmployeesList from '../employees-list/employees-list';
+import { useState } from 'react';
 
-const SearchPanel = () => {
+const SearchPanel = () => {      
     return (
         <input type="text"
                 className="form-control search-input"
-                placeholder="Найти сотрудника"/>
+                placeholder="Найти сотрудника"/> 
     )
 }
 
